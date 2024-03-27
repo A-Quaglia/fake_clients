@@ -1,0 +1,10 @@
+site_name: My Docs
+
+plugins:
+- mkdocstrings:
+    default_handler: python
+- search
+- mermaid2
+
+theme:
+  name: material
