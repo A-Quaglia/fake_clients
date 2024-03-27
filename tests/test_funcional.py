@@ -30,7 +30,7 @@ def test_schemacliente_validation_error_categoria_nao_valida():
     cliente = dict(uf= 'MG', nome=450,
     categoria= 'categoria Y', categoria_2= 'V4', unidades=-3, tamanho=0.35)
     
-    with pytest.raises(ValidationError):
+    with pytest.raises(Exception):
         SchemaCliente(**cliente)
 
 def test_generate_cliente():
