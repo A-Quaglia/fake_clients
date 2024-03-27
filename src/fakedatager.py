@@ -2,9 +2,7 @@ import random
 from enum import Enum
 from typing import Callable, List, Tuple
 
-import pandas as pd
 from faker import Faker
-from pandas import DataFrame
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
 fake = Faker('pt_BR')
