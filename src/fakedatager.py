@@ -108,3 +108,4 @@ def generate_items(nrows: int, generator: Callable, schema: None | BaseModel = N
         rows.append(row)
 
     return error, rows
+
