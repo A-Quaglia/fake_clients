@@ -1,6 +1,6 @@
 # fakedatager
 
-[Visite minha documentacao](https://a-quaglia.github.io/fake_clients/):
+[Visite minha documentacao]([https://a-quaglia.github.io/fake_clients/](https://a-quaglia.github.io/fakedatagen/)):
 
 1. Clone o repositório:
 
