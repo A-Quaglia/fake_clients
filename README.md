@@ -4,8 +4,8 @@
 
 1. Clone o repositório:
 
-```bashhttps://a-quaglia.github.io/fakedatagen/
-git https://github.com/A-Quaglia/https://github.com/A-Quaglia/fakedatagen
+```bash
+git clone https://github.com/A-Quaglia/fakedatagen.git
 cd workshop_02_aovivo
 ```
 
