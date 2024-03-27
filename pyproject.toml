@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "fake-clients"
+version = "0.1.0"
+description = ""
+authors = ["A-Quaglia <augustoquaglia@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.1"
+faker = "^24.4.0"
+pydantic = "^2.6.4"
+pytest = "^8.1.1"
+taskipy = "^1.12.2"
+openpyxl = "^3.1.2"
+mkdocs = "^1.5.3"
+black = "^24.3.0"
+isort = "^5.13.2"
+mkdocstrings = {extras = ["python"], version = "^0.24.1"}
+mkdocs-material = "^9.5.15"
+mkdocs-mermaid2-plugin = "^1.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskipy.tasks]
+tests = "poetry run pytest -v tests/"
+format = """
+isort .
+black .
+"""
+docs = "mkdocs serve"
