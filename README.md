@@ -1,11 +1,11 @@
 # fakedatager
 
-[Visite minha documentacao]([https://a-quaglia.github.io/fake_clients/](https://a-quaglia.github.io/fakedatagen/)):
+[Visite minha documentacao](https://a-quaglia.github.io/fakedatagen/):
 
 1. Clone o repositório:
 
-```bashhttps://a-quaglia.github.io/fake_clients/
-git https://github.com/A-Quaglia/https://github.com/A-Quaglia/fake_clients
+```bashhttps://a-quaglia.github.io/fakedatagen/
+git https://github.com/A-Quaglia/https://github.com/A-Quaglia/fakedatagen
 cd workshop_02_aovivo
 ```
 
