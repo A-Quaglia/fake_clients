@@ -32,3 +32,15 @@ def test_schemacliente_validation_error_categoria_nao_valida():
     
     with pytest.raises(ValidationError):
         SchemaCliente(**cliente)
+
+def test_generate_cliente():
+    cliente = generate_cliente()
+    SchemaCliente(**cliente)
+
+def test_generate_items_type():
+    error, result = generate_items(3, generate_cliente)
+
+    assert type(error) == list
+    assert type(result) == list
+    assert len(result) == 3
+

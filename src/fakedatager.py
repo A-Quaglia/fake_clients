@@ -61,3 +61,52 @@ class SchemaCliente(BaseModel):
             raise Exception("categoria_2 não definida")
 
 
+def generate_cliente():
+    """
+    Gera cliente aleatório
+
+    Returns:
+        dict: Um dicionário representando um cliente aleatório com as seguintes chaves:
+            - 'uf': Estado de residência do cliente (string).
+            - 'nome': Nome do cliente (string).
+            - 'categoria': Categoria do cliente (string).
+            - 'categoria_2': Categoria adicional do cliente (string).
+            - 'unidades': Número de unidades relacionadas ao cliente (inteiro).
+            - 'tamanho': Tamanho do cliente (float).
+    """
+    cliente = dict(
+        uf=fake.estado()[0],
+        nome= fake.name(),
+        categoria= random.choice(list(Categoria)).value,
+        categoria_2= random.choice(list(Categoria2)).value,
+        unidades= random.randrange(1, 6),
+        tamanho= random.uniform(0, 12),
+    )
+    return cliente
+
+def generate_items(nrows: int, generator: Callable, schema: None | BaseModel = None) -> Tuple[List, List]:
+    """
+    Gera lista de itens utilizando um gerador (generator) e que pode ser validado por um schema (BaseModel)
+
+    Args:
+        nrows (int): número de items a serem gerados
+        generator (Callable): gerador de item
+        schema (None | BaseModel, optional): esquema a ser usado para validação dos dados gerados, se None -> skip validation. Defaults to None.
+
+    Returns:
+        Tuple[List, List]: Lista contendo os erros (validação esquema incorreta) e lista de resultados (items gerados)
+    """
+    error = []
+    rows = []
+    for i in range(nrows):
+        row = generate_cliente()
+
+        if schema:
+            try:
+                row = SchemaCliente(**row)
+            except ValidationError as e:
+                error.append(e)
+
+        rows.append(row)
+
+    return error, rows
