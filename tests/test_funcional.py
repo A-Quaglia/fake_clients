@@ -3,7 +3,7 @@ import pytest
 from pandas import DataFrame
 from pydantic import ValidationError
 
-from src.fakedatager import SchemaCliente, generate_cliente, generate_items
+from src.fakedatagen import SchemaCliente, generate_cliente, generate_items
 
 
 def test_schemacliente_valid():
